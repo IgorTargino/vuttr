@@ -1,4 +1,4 @@
-import styles from "./styles.module.scss";
+import styles from './styles.module.scss';
 
 function Modal() {
   return (
@@ -8,18 +8,18 @@ function Modal() {
           <fieldset>
             <header>
               <legend>Add new tool</legend>
-              <button>
+              <button type="button">
                 <img src="icon-close.svg" alt="" />
               </button>
             </header>
             <div>
-              <label>
+              <label htmlFor="tool-name">
                 Tool name
                 <input type="text" id="tool-name" placeholder="Hotel" />
               </label>
             </div>
             <div>
-              <label>
+              <label htmlFor="tool-link">
                 Tool link
                 <input
                   type="url"
@@ -29,13 +29,13 @@ function Modal() {
               </label>
             </div>
             <div>
-              <label>
+              <label htmlFor="description">
                 Tool description
-                <textarea name="description" id="description"></textarea>
+                <textarea name="description" id="description" />
               </label>
             </div>
             <div>
-              <label>
+              <label htmlFor="tags">
                 Tags
                 <input
                   type="text"

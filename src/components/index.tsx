@@ -6,4 +6,4 @@ export {
   Tool,
   Header,
   Modal,
-}
+};
