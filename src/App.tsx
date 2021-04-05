@@ -4,7 +4,7 @@ import { Header, Tool, Modal } from './components';
 import { useState } from 'react';
 
 function App() {
-  const [stateModal, setStateModal] = useState(true);
+  const [stateModal, setStateModal] = useState(false);
   return (
     <div className="App">
       <Header/>
