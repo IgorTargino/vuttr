@@ -1,25 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap');
 
 .overlay {
-  background: var(--overlay);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   position: fixed;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  background: var(--overlay);
 }
 
 .container {
-  width: 45em;
+  width: 720px;
   padding: 1rem;
   
   border-radius: 5px;
 
   box-shadow: 0 0 60px rgba(0, 0, 0, 0.05);
+  box-shadow: 0rem 1.25rem 1.5rem #0000001A;
   background: var(--white);
 }
 
@@ -28,7 +30,6 @@ form {
   padding: 1rem;
 
   border-radius: 5px;
-  border: 1px solid #000;
   
   background-color: var(--white);
 }
@@ -46,29 +47,27 @@ legend {
   padding-bottom: 2rem;
 }
 
-input, textarea {
+input[type=text], input[type=url], textarea {
   width: 100%;
   height: 50px;
   // padding-top: 1rem;
   // padding-bottom: 1rem;
   padding-left: 2rem;
+  margin-bottom: 2rem;
 
   border-radius: 5px;
 
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 1.25rem;
 
-  background-color: red;
+  background-color: var(--bgInput);
   border: 1px solid #EBEAED;
 
   color: #000;
 
-  &:empty {  
-   background-color: var(--bgInput);
-  }
-
   &::placeholder { 
     color: #B1ADB9;
+  
   }
 
   &:focus {
@@ -80,7 +79,12 @@ input, textarea {
       color: #8F8A9B;
     }
   }
+}
 
+textarea {
+  width: 100%;
+  height: 100px;
 
+  padding-top: 1rem;
 }
 
