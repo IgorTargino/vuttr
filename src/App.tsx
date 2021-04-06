@@ -1,15 +1,15 @@
 import './styles/global.scss';
 
-import { Header, Tool, Modal } from './components';
 import { useState } from 'react';
+import { Header, Tool, Modal } from './components';
 
 function App() {
-  const [stateModal, setStateModal] = useState(false);
+  const [stateModal] = useState(false);
   return (
     <div className="App">
-      <Header/>
-      <Tool/>
-      {stateModal && <Modal/>}
+      <Header />
+      <Tool />
+      {stateModal && <Modal />}
     </div>
   );
 }

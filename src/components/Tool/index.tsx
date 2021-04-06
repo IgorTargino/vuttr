@@ -1,11 +1,11 @@
-import styles from "./styles.module.scss";
+import styles from './styles.module.scss';
 
 function Tool() {
   return (
     <div className={styles.container}>
       <div className={styles.header}>
         <p>Tool</p>
-        <button className={styles.button}>
+        <button type="button" className={styles.button}>
           <img src="icon-close.svg" alt="close" />
           remove
         </button>
