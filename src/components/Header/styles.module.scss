@@ -17,10 +17,12 @@
 
   h1 {
     font-size: 2.625rem;
+    letter-spacing: 0.84px;
   }
 
   h2 {
-    font-size: 2.25rem
+    font-size: 2.25rem;
+    letter-spacing: 0.72px;
   }
 }
 
@@ -29,7 +31,7 @@
   flex-direction: row;
 
   width: 100%;
-  height: 30px;
+  height: 50px;
 
   justify-content: space-between;
   align-items: center;
@@ -42,40 +44,56 @@
   justify-content: center;
   align-items: center;
 
-  height: 120%;
+  height: 100%;
+  width: 100%;
 
-  gap: 0.8rem;
+  input[type=search] {
+    width: 100%;
+    height: 100%;
+    padding-left: 2rem;
   
+    border-radius: 5px;
+  
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1.25rem;
+    letter-spacing: 0.4px;
+  
+    background-color: var(--bgInput);
+    border: 1px solid #ebeaed;
+  
+    color: #000;
+  
+    &::placeholder {
+      color: #b1adb9;
+    }
+  
+    &:focus {
+      border: 1px solid #dedce1;
+      background-color: var(--bgInputFocus);
+      color: #170c3a;
+  
+      &::placeholder {
+        color: #8f8a9b;
+      }
+    }
+  }
+
   section {
     display: flex;
     flex-direction: row;
 
     align-items: center;
-    justify-content: center;
-
+    
+    width: 80%;
     gap: 0.3rem;
+
+    margin-left: 1rem;
+
+    span {
+      font-size: 1.25rem;
+      letter-spacing: 0.4px;
+    }
   }
-}
-
-.searchBar{
-  width: 300px;
-  height: 100%;
-
-  padding-left: 30px;
-
-  border-radius: 5px;
-
-  font-family: 'Source Sans Pro', sans-serif;
-  font-size: 1.25rem;
-
-  background-color: var(--bgInput);
-  border: 1px solid #EBEAED;
-
-  &:focus {
-    background-color: var(--bgInputFocus);
-    border: 1px solid #DEDCE1;
-  }
-  color: #000;
 }
 
 .button {
@@ -84,8 +102,8 @@
   justify-content: center;
   align-items: center;
 
-  width: 15%;
-  height: 120%;
+  width: 25%;
+  height: 100%;
 
   border-radius: 5px;
 
@@ -98,13 +116,12 @@
   font-weight: 600;
 
   &:hover {
-    background-color: #2F55CC;
+    background-color: #2f55cc;
 
     cursor: pointer;
   }
 
   &:active {
-    background-color: #244AA8;
+    background-color: #244aa8;
   }
-
 }

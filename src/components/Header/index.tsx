@@ -11,11 +11,7 @@ function Header() {
 
       <div className={styles.toolbar}>
         <div className={styles.search}>
-          <input
-            type="search"
-            placeholder="Digite o que está procurando..."
-            className={styles.searchBar}
-          />
+          <input type="search" placeholder="Digite o que está procurando..." />
           <section>
             <input type="checkbox" />
             <span>search in tags only</span>
