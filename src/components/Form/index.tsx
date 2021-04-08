@@ -1,24 +1,28 @@
+import { AiOutlinePlus } from 'react-icons/ai';
 import styles from './styles.module.scss';
 
-function Modal() {
+function Form() {
   return (
     <div className={styles.overlay}>
       <div className={styles.container}>
         <form action="">
           <fieldset>
             <header>
-              <legend>Add new tool</legend>
+              <legend>
+                <AiOutlinePlus size={20} />
+                Add new tool
+              </legend>
               <button type="button">
                 <img src="icon-close.svg" alt="" />
               </button>
             </header>
-            <div>
+            <section>
               <label htmlFor="tool-name">
                 Tool name
                 <input type="text" id="tool-name" placeholder="Hotel" />
               </label>
-            </div>
-            <div>
+            </section>
+            <section>
               <label htmlFor="tool-link">
                 Tool link
                 <input
@@ -27,23 +31,23 @@ function Modal() {
                   placeholder="https://github/typicode/hotel"
                 />
               </label>
-            </div>
-            <div>
+            </section>
+            <section>
               <label htmlFor="description">
                 Tool description
                 <textarea name="description" id="description" />
               </label>
-            </div>
-            <div>
+            </section>
+            <article>
               <label htmlFor="tags">
                 Tags
                 <input
                   type="text"
                   id="tags"
-                  placeholder="node organizing webapps domain developer https proxy"
+                  placeholder="tag1, tag2, tag3, tag4, tag5"
                 />
               </label>
-            </div>
+            </article>
 
             <input type="submit" value="Add tool" />
           </fieldset>
@@ -53,4 +57,4 @@ function Modal() {
   );
 }
 
-export default Modal;
+export default Form;
