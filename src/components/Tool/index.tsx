@@ -2,12 +2,11 @@ import styles from './styles.module.scss';
 
 function Tool() {
   return (
-    <div className={styles.container}>
+    <section className={styles.container}>
       <div className={styles.header}>
-        <p>Tool</p>
+        <h5>Tool</h5>
         <button type="button" className={styles.button}>
           <img src="icon-close.svg" alt="close" />
-          remove
         </button>
       </div>
       <div className={styles.data}>
@@ -19,7 +18,7 @@ function Tool() {
           <strong>#tags #tag2 #tag3 #tag4</strong>
         </p>
       </div>
-    </div>
+    </section>
   );
 }
 

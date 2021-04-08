@@ -1,4 +1,5 @@
-import styles from "./styles.module.scss";
+import { AiOutlinePlus } from 'react-icons/ai';
+import styles from './styles.module.scss';
 
 function Form() {
   return (
@@ -7,19 +8,22 @@ function Form() {
         <form action="">
           <fieldset>
             <header>
-              <legend>Add new tool</legend>
-              <button>
+              <legend>
+                <AiOutlinePlus size={20} />
+                Add new tool
+              </legend>
+              <button type="button">
                 <img src="icon-close.svg" alt="" />
               </button>
             </header>
-            <div>
-              <label>
+            <section>
+              <label htmlFor="tool-name">
                 Tool name
                 <input type="text" id="tool-name" placeholder="Hotel" />
               </label>
-            </div>
-            <div>
-              <label>
+            </section>
+            <section>
+              <label htmlFor="tool-link">
                 Tool link
                 <input
                   type="url"
@@ -27,23 +31,23 @@ function Form() {
                   placeholder="https://github/typicode/hotel"
                 />
               </label>
-            </div>
-            <div>
-              <label>
+            </section>
+            <section>
+              <label htmlFor="description">
                 Tool description
-                <textarea name="description" id="description"></textarea>
+                <textarea name="description" id="description" />
               </label>
-            </div>
-            <div>
-              <label>
+            </section>
+            <article>
+              <label htmlFor="tags">
                 Tags
                 <input
                   type="text"
                   id="tags"
-                  placeholder="node organizing webapps domain developer https proxy"
+                  placeholder="tag1, tag2, tag3, tag4, tag5"
                 />
               </label>
-            </div>
+            </article>
 
             <input type="submit" value="Add tool" />
           </fieldset>

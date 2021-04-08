@@ -1,5 +1,6 @@
 import Tool from './Tool';
 import Header from './Header';
-import Modal from './Modal';
+import Form from './Form';
+import DeleteModal from './DeleteModal';
 
-export { Tool, Header, Modal };
+export { Tool, Header, Form, DeleteModal };
