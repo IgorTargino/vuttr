@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './styles.module.scss';
 
-function DeleteModal() {
+function RemoveTool() {
   return (
     <div className={styles.overlay}>
       <section className={styles.container}>
@@ -23,4 +23,4 @@ function DeleteModal() {
   );
 }
 
-export default DeleteModal;
+export default RemoveTool;

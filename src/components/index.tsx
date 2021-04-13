@@ -1,6 +1,8 @@
-import Tool from './Tool';
+import Tool from './ToolWidget';
 import Header from './Header';
-import Form from './Form';
-import DeleteModal from './DeleteModal';
+import RemoveTool from './Modals/RemoveTool';
+import Input from './Input';
+import TextArea from './TextArea';
+import ModalAddTool from './Modals/ModalAddTool';
 
-export { Tool, Header, Form, DeleteModal };
+export { Tool, Header, RemoveTool, Input, TextArea, ModalAddTool };

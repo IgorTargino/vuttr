@@ -1,0 +1,45 @@
+.input {
+  width: 100%;
+  height: 50px;
+
+  padding-left: 1rem;
+  margin-bottom: 1.5rem;
+  margin-top: 1rem;
+
+  border-radius: 5px;
+
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 1.25rem;
+
+  background-color: var(--bgInput);
+  border: 1px solid #ebeaed;
+
+  color: #000;
+
+  &::placeholder {
+    color: #b1adb9;
+  }
+
+  &:focus {
+    border: 1px solid #dedce1;
+    background-color: var(--bgInputFocus);
+    color: #170c3a;
+
+    &::placeholder {
+      color: #8f8a9b;
+    }
+  }
+
+  &:valid {
+    border: 1px solid #ebeaed;
+    background-color: var(--bgInput);
+  }
+}
+
+label {
+  text-align: left;
+  font: normal normal 600 1.25rem Source Sans Pro;
+  letter-spacing: 0.4px;
+  color: #170c3a;
+  opacity: 1;
+}

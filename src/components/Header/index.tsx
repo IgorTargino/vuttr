@@ -1,7 +1,12 @@
+import React from 'react';
 import { AiOutlinePlus } from 'react-icons/ai';
 import styles from './styles.module.scss';
 
-function Header() {
+interface Props {
+  openModal: () => void;
+}
+
+function Header({ openModal }: Props) {
   return (
     <header className={styles.container}>
       <section className={styles.title}>
@@ -22,7 +27,11 @@ function Header() {
           </section>
         </div>
 
-        <button type="button" className={styles.button}>
+        <button
+          onClick={() => openModal()}
+          type="button"
+          className={styles.button}
+        >
           <AiOutlinePlus size={20} />
           Add
         </button>
