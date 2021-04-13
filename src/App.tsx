@@ -5,7 +5,7 @@ import Modal from 'react-modal';
 import { Header } from './components';
 import ToolProvider from './context/ToolContext';
 
-import ModalAddTool from './components/Modals/ModalAddTool';
+import ModalAddTool from './components/ModalAddTool';
 
 Modal.setAppElement('#root');
 

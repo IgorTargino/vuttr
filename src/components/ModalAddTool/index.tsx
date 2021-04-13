@@ -2,11 +2,11 @@ import React, { SyntheticEvent, useEffect, useState } from 'react';
 import Modal from 'react-modal';
 // import { ValidationError } from 'yup';
 import { AiOutlinePlus } from 'react-icons/ai';
-import { Input, TextArea } from '../../index';
+import { Input, TextArea } from '../index';
 import FormValidations from './FormValidations';
 
 import styles from './styles.module.scss';
-import { useToolContext } from '../../../context/ToolContext';
+import { useToolContext } from '../../context/ToolContext';
 
 const initialFormState = {
   title: '',
