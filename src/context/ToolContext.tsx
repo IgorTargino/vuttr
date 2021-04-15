@@ -1,12 +1,6 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-console */
-import {
-  createContext,
-  ReactNode,
-  useContext,
-  useEffect,
-  useState,
-} from 'react';
+import { createContext, ReactNode, useContext, useState } from 'react';
 
 import api from '../services/api';
 
@@ -34,6 +28,8 @@ export const ToolContext = createContext<ToolContextData>(
 export default function ToolContextProvider({ children }: ToolProviderProps) {
   const [toolData, setToolData] = useState<ToolData>({} as ToolData);
 
+  const header = 'Content-Type: application/json';
+
   async function getToolData(name: string) {
     try {
       const { data } = await api.get(name);
@@ -47,14 +43,15 @@ export default function ToolContextProvider({ children }: ToolProviderProps) {
   async function addTool(tool: ToolData) {
     try {
       const { data } = await api.post(
-        '/tools/',
+        '/tools',
         {
           ...tool,
         },
         {
-          headers: 'Content-Type: application/json',
+          headers: { header },
         }
       );
+      console.log(data);
     } catch (error) {
       console.log(error);
     }
