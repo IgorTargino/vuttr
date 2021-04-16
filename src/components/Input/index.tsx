@@ -1,42 +1,38 @@
 /* eslint-disable no-unused-vars */
-import React, {
-  useState,
-  forwardRef,
-  ForwardRefRenderFunction,
-  InputHTMLAttributes,
-} from 'react';
-import { FieldError, UseFormRegister } from 'react-hook-form';
+import { InputHTMLAttributes } from 'react';
+import { FieldError, Path, UseFormRegister } from 'react-hook-form';
 
 import styles from './styles.module.scss';
 
 type FormData = {
   title: string;
-  // link: string;
-  // description: string;
-  // tags: Array<string>;
+  link: string;
+  description: string;
+  tags: string;
 };
 interface Props extends InputHTMLAttributes<HTMLInputElement> {
   name: string;
-  type: string;
-  label: string;
+  label: Path<FormData>;
   placeholder: string;
   register: UseFormRegister<FormData>;
   error: FieldError | undefined;
 }
 
-function Input({ name, type, label, placeholder, register, error }: Props) {
+function Input({ name, label, placeholder, register, error }: Props) {
   return (
-    <>
-      <label htmlFor={name}>{label}</label>
+    <section className={styles.container}>
+      <div>
+        <label htmlFor={name}>{label}</label>
+        <span>*</span>
+      </div>
+
       <input
         className={styles.input}
-        name={name}
-        type={type}
-        placeholder={placeholder}
-        {...register}
+        placeholder={error !== undefined ? 'Error' : placeholder}
+        {...register(label)}
       />
       <p>{error?.message}</p>
-    </>
+    </section>
   );
 }
 

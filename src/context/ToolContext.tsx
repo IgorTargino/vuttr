@@ -5,12 +5,11 @@ import { createContext, ReactNode, useContext, useState } from 'react';
 import api from '../services/api';
 
 interface ToolData {
-  title: string;
-  link: string;
-  description: string;
-  tags: Array<string>;
+  title?: string;
+  link?: string;
+  description?: string;
+  tags?: Array<string>;
 }
-
 interface ToolContextData {
   getToolData: (name: string) => Promise<void>;
   addTool: (tool: ToolData) => Promise<void>;
@@ -35,6 +34,7 @@ export default function ToolContextProvider({ children }: ToolProviderProps) {
       const { data } = await api.get(name);
 
       setToolData(data);
+      console.log(data);
     } catch (error) {
       console.log(error);
     }
@@ -43,7 +43,7 @@ export default function ToolContextProvider({ children }: ToolProviderProps) {
   async function addTool(tool: ToolData) {
     try {
       const { data } = await api.post(
-        '/tools',
+        'tools',
         {
           ...tool,
         },
