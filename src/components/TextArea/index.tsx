@@ -1,31 +1,35 @@
-import React, { useState } from 'react';
+import { InputHTMLAttributes } from 'react';
+import { FieldError, Path, UseFormRegister } from 'react-hook-form';
 import styles from './styles.module.scss';
 
-interface Props {
-  error: string;
-  label: string;
+type FormData = {
+  title: string;
+  link: string;
+  description: string;
+  tags: string;
+};
+interface Props extends InputHTMLAttributes<HTMLInputElement> {
   name: string;
-  value: string;
+  label: Path<FormData>;
   placeholder: string;
-  // eslint-disable-next-line no-unused-vars
-  onChange: (event: any) => void;
+  register: UseFormRegister<FormData>;
+  error: FieldError | undefined;
 }
 
-function TextArea({ error, label, ...rest }: Props) {
-  const [touched, setTouched] = useState(false);
-
+function TextArea({ name, label, placeholder, register, error }: Props) {
   return (
-    <>
-      <label htmlFor={rest.name}>{label}</label>
+    <section className={styles.container}>
+      <div>
+        <label htmlFor={name}>{label}</label>
+        <span>*</span>
+      </div>
       <textarea
         className={styles.textarea}
-        // eslint-disable-next-line react/jsx-props-no-spreading
-        {...rest}
-        onBlur={() => setTouched(true)}
-        placeholder={rest.placeholder}
+        placeholder={error !== undefined ? 'Error' : placeholder}
+        {...register(label)}
       />
-      <span>{touched && error}</span>
-    </>
+      <p>{error?.message}</p>
+    </section>
   );
 }
 

@@ -5,7 +5,7 @@ import Modal from 'react-modal';
 import { Header } from './components';
 import ToolProvider from './context/ToolContext';
 
-import ModalAddTool from './components/Modals/ModalAddTool';
+import AddToolForm from './components/AddToolForm';
 
 Modal.setAppElement('#root');
 
@@ -23,7 +23,7 @@ function App() {
   return (
     <ToolProvider>
       <Header openModal={openModal} />
-      <ModalAddTool isOpen={stateModal} onRequestClose={closeModal} />
+      <AddToolForm isOpen={stateModal} onRequestClose={closeModal} />
     </ToolProvider>
   );
 }

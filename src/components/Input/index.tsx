@@ -1,43 +1,40 @@
 /* eslint-disable no-unused-vars */
-import React, { useState } from 'react';
+import { InputHTMLAttributes } from 'react';
+import { FieldError, Path, UseFormRegister } from 'react-hook-form';
+
 import styles from './styles.module.scss';
 
-interface Props {
+type FormData = {
+  title: string;
+  link: string;
+  description: string;
+  tags: string;
+};
+interface Props extends InputHTMLAttributes<HTMLInputElement> {
   name: string;
-  label: string;
-  error: string;
-  value: string;
+  label: Path<FormData>;
   placeholder: string;
-  // eslint-disable-next-line no-unused-vars
-  onChange: (event: any) => void;
+  register: UseFormRegister<FormData>;
+  error: FieldError | undefined;
 }
 
-interface PropsTags {
-  name: string;
-  label: string;
-  error: Array<string>;
-  value: Array<string>;
-  placeholder: string;
-  // eslint-disable-next-line no-unused-vars
-  onChange: (event: any) => void;
-}
-
-function Input({ error, label, ...rest }: Props | PropsTags) {
-  const [touched, setTouched] = useState(false);
-
+function Input({ name, label, placeholder, register, error }: Props) {
   return (
-    <>
-      <label htmlFor={rest.name}>{label}</label>
+    <section className={styles.container}>
+      <div>
+        <label htmlFor={name}>{label}</label>
+        <span>*</span>
+      </div>
+
       <input
         className={styles.input}
-        // eslint-disable-next-line react/jsx-props-no-spreading
-        {...rest}
-        onBlur={() => setTouched(true)}
-        placeholder={rest.placeholder}
+        placeholder={error !== undefined ? 'Error' : placeholder}
+        {...register(label)}
       />
-      <span>{touched && error}</span>
-    </>
+      <p>{error?.message}</p>
+    </section>
   );
 }
 
+// eslint-disable-next-line no-const-assign
 export default Input;

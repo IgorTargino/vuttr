@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './styles.module.scss';
 
-function RemoveTool() {
+function ModalRemoveTool() {
   return (
     <div className={styles.overlay}>
       <section className={styles.container}>
@@ -23,4 +23,4 @@ function RemoveTool() {
   );
 }
 
-export default RemoveTool;
+export default ModalRemoveTool;
