@@ -4,15 +4,14 @@ import React, { useContext } from 'react';
 import Modal from 'react-modal';
 
 import { AiOutlinePlus } from 'react-icons/ai';
-import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { Input } from '../index';
+import { useForm } from 'react-hook-form';
+import { Input, TextArea } from '../index';
+import usePostTools from '../../Hooks/usePostTools';
 
 import styles from './styles.module.scss';
 
 import FormValidations from './validations';
-import { ToolContext } from '../../context/ToolContext';
-import TextArea from '../TextArea';
 
 const initialValues = {
   title: '',
@@ -47,14 +46,14 @@ function AddToolForm({ isOpen, onRequestClose }: Props) {
     resolver: yupResolver(FormValidations),
   });
 
-  const { addTool } = useContext(ToolContext);
+  const { addTool } = usePostTools();
 
   const onSubmit = async (data: FormData) => {
     const newData: ToolData = {};
     newData.title = data.title;
     newData.link = data.link;
     newData.description = data.description;
-    newData.tags = data.tags.split(' ,');
+    newData.tags = data.tags.split(',');
 
     await addTool(newData);
   };

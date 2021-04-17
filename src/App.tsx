@@ -2,8 +2,7 @@ import './styles/global.scss';
 
 import { useState } from 'react';
 import Modal from 'react-modal';
-import { Header } from './components';
-import ToolProvider from './context/ToolContext';
+import { Header, ToolList } from './components';
 
 import AddToolForm from './components/AddToolForm';
 
@@ -21,10 +20,11 @@ function App() {
   }
 
   return (
-    <ToolProvider>
+    <>
       <Header openModal={openModal} />
       <AddToolForm isOpen={stateModal} onRequestClose={closeModal} />
-    </ToolProvider>
+      <ToolList />
+    </>
   );
 }
 

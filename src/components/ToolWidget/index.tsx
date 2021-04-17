@@ -1,25 +1,32 @@
 import styles from './styles.module.scss';
 
-function Tool() {
+interface Props {
+  title: string;
+  link: string;
+  description: string;
+  tags: string;
+}
+
+const ToolWidget = ({ title, link, description, tags }: Props) => {
   return (
     <section className={styles.container}>
       <div className={styles.header}>
-        <h5>Tool</h5>
+        <a href={link} target="_blank" rel="noreferrer">
+          <h5>{title}</h5>
+        </a>
+
         <button type="button" className={styles.button}>
           <img src="icon-close.svg" alt="close" />
         </button>
       </div>
       <div className={styles.data}>
+        <p>{description}</p>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam enim
-          necessitatibus doloremque architecto unde, odit nobis dolorem fuga
-        </p>
-        <p>
-          <strong>#tags #tag2 #tag3 #tag4</strong>
+          <strong>{tags}</strong>
         </p>
       </div>
     </section>
   );
-}
+};
 
-export default Tool;
+export default ToolWidget;
