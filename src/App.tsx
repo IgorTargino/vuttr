@@ -9,20 +9,20 @@ import AddToolForm from './components/AddToolForm';
 Modal.setAppElement('#root');
 
 function App() {
-  const [stateModal, setStateModal] = useState(false);
+  const [stateForm, setStateForm] = useState(false);
 
-  function openModal() {
-    setStateModal(true);
+  function openForm() {
+    setStateForm(true);
   }
 
-  function closeModal() {
-    setStateModal(false);
+  function closeForm() {
+    setStateForm(false);
   }
 
   return (
     <>
-      <Header openModal={openModal} />
-      <AddToolForm isOpen={stateModal} onRequestClose={closeModal} />
+      <Header openModal={openForm} />
+      <AddToolForm isOpen={stateForm} onRequestClose={closeForm} />
       <ToolList />
     </>
   );

@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState } from 'react';
 import api from '../services/api';
 
 interface ToolData {
@@ -9,8 +9,8 @@ interface ToolData {
 }
 
 const usePostTools = () => {
-  const [error, setError] = React.useState(null);
-  const [loading, setLoading] = React.useState(false);
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   const header = 'Content-Type: application/json';
 
@@ -27,9 +27,10 @@ const usePostTools = () => {
           headers: { header },
         }
       );
-      setLoading(false);
     } catch (errors) {
       setError(errors.message);
+    } finally {
+      setLoading(false);
     }
   };
 

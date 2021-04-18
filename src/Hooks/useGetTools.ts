@@ -1,10 +1,10 @@
-import React, { useCallback, useState } from 'react';
+import { useCallback, useState } from 'react';
 import api from '../services/api';
 
 const useGetTools = () => {
   const [toolData, setToolData] = useState([]);
-  const [error, setError] = React.useState(null);
-  const [loading, setLoading] = React.useState(false);
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   const request = useCallback(async (url) => {
     try {

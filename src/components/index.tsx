@@ -3,7 +3,7 @@ import Header from './Header';
 import Input from './Input';
 import TextArea from './TextArea';
 import AddToolForm from './AddToolForm';
-import RemoveTool from './ModalRemoveTool';
+import RemoveToolModal from './RemoveToolModal';
 import ToolList from './ToolList';
 
 export {
@@ -12,6 +12,6 @@ export {
   Input,
   TextArea,
   AddToolForm,
-  RemoveTool,
+  RemoveToolModal,
   ToolList,
 };

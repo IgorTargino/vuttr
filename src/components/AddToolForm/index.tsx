@@ -1,6 +1,5 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import React, { useContext } from 'react';
 import Modal from 'react-modal';
 
 import { AiOutlinePlus } from 'react-icons/ai';
@@ -56,6 +55,7 @@ function AddToolForm({ isOpen, onRequestClose }: Props) {
     newData.tags = data.tags.split(',');
 
     await addTool(newData);
+    onRequestClose();
   };
 
   return (

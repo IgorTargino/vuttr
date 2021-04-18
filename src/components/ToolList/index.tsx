@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unused-prop-types */
 import React, { useEffect } from 'react';
 import useGetTools from '../../Hooks/useGetTools';
 import { ToolWidget } from '../index';
@@ -7,6 +8,7 @@ interface ToolData {
   link: string;
   description: string;
   tags: Array<string>;
+  id: number;
 }
 
 const addHashTag = (element: string) => {
@@ -24,16 +26,17 @@ const ToolList = () => {
 
   useEffect(() => {
     request('tools');
-  }, [toolData]);
+  }, []);
 
   return (
     <>
-      {toolData.map((props: ToolData) => (
+      {toolData.map((tool: ToolData) => (
         <ToolWidget
-          title={props.title}
-          link={props.link}
-          description={props.description}
-          tags={props.tags.map(addHashTag).join(' ')}
+          title={tool.title}
+          link={tool.link}
+          description={tool.description}
+          tags={tool.tags.map(addHashTag).join(' ')}
+          id={tool.id}
         />
       ))}
     </>
