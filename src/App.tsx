@@ -1,30 +1,26 @@
 import './styles/global.scss';
-
-import { useState } from 'react';
 import Modal from 'react-modal';
+import { useState } from 'react';
 import { Header, ToolList } from './components';
 
-import AddToolForm from './components/AddToolForm';
+import { ToolsProvider } from './context/toolsContext';
 
 Modal.setAppElement('#root');
 
 function App() {
-  const [stateForm, setStateForm] = useState(false);
-
-  function openForm() {
-    setStateForm(true);
-  }
-
-  function closeForm() {
-    setStateForm(false);
-  }
+  const [inputValue, setInputValue] = useState('');
+  const [checkbox, setCheckbox] = useState(true);
 
   return (
-    <>
-      <Header openModal={openForm} />
-      <AddToolForm isOpen={stateForm} onRequestClose={closeForm} />
-      <ToolList />
-    </>
+    <ToolsProvider>
+      <Header
+        inputValue={inputValue}
+        setInputValue={setInputValue}
+        checkbox={checkbox}
+        setCheckbox={setCheckbox}
+      />
+      <ToolList inputValue={inputValue} checkbox={checkbox} />
+    </ToolsProvider>
   );
 }
 

@@ -18,7 +18,7 @@ interface Props extends InputHTMLAttributes<HTMLInputElement> {
   error: FieldError | undefined;
 }
 
-function Input({ name, label, placeholder, register, error }: Props) {
+function InputForm({ name, label, placeholder, register, error }: Props) {
   return (
     <section className={styles.container}>
       <div>
@@ -37,4 +37,4 @@ function Input({ name, label, placeholder, register, error }: Props) {
 }
 
 // eslint-disable-next-line no-const-assign
-export default Input;
+export default InputForm;

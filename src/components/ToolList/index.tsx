@@ -1,6 +1,5 @@
-/* eslint-disable react/no-unused-prop-types */
-import React, { useEffect } from 'react';
-import useGetTools from '../../Hooks/useGetTools';
+import { useEffect } from 'react';
+import { useTools } from '../../context/toolsContext';
 import { ToolWidget } from '../index';
 
 interface ToolData {
@@ -9,6 +8,10 @@ interface ToolData {
   description: string;
   tags: Array<string>;
   id: number;
+}
+interface Props {
+  inputValue: string;
+  checkbox: boolean;
 }
 
 const addHashTag = (element: string) => {
@@ -21,12 +24,18 @@ const addHashTag = (element: string) => {
   return NewElement.join('');
 };
 
-const ToolList = () => {
-  const { request, toolData } = useGetTools();
+const ToolList = (props: Props) => {
+  const { toolData, getToolsData, newUpdate } = useTools();
+  const { inputValue, checkbox } = props;
 
   useEffect(() => {
-    request('tools');
-  }, []);
+    if (inputValue === '') getToolsData('/');
+    else if (checkbox === false) {
+      getToolsData(`?q=${inputValue}`);
+    } else if (checkbox === true) {
+      getToolsData(`?tags_like=${inputValue}`);
+    }
+  }, [inputValue, checkbox, newUpdate]);
 
   return (
     <>

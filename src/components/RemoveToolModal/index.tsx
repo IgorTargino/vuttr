@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import Modal from 'react-modal';
-import useRemoveTool from '../../Hooks/useRemoveTool';
+import { useTools } from '../../context/toolsContext';
 
 import styles from './styles.module.scss';
 
@@ -8,12 +8,13 @@ interface Props {
   isOpen: boolean;
   onRequestClose: () => void;
   id: number;
+  title: string;
 }
 
-const ModalRemoveTool = ({ isOpen, onRequestClose, id }: Props) => {
-  const { removeTool } = useRemoveTool();
+const ModalRemoveTool = ({ isOpen, onRequestClose, id, title }: Props) => {
+  const { removeTool } = useTools();
 
-  const remove = (index: number) => {
+  const remove = async (index: number) => {
     removeTool(index);
     onRequestClose();
   };
@@ -25,13 +26,17 @@ const ModalRemoveTool = ({ isOpen, onRequestClose, id }: Props) => {
       className={styles.container}
       overlayClassName={styles.overlay}
     >
-      <div className={styles.title}>
+      <section className={styles.title}>
         <img src="icon-close.svg" alt="close" />
-        <p>Remove Tool</p>
-      </div>
-      <p>Are you sure you want to remove hotel?</p>
-      <div className={styles.footer}>
-        <button className={styles.cancel} type="button">
+        <h2>Remove Tool</h2>
+      </section>
+      <p>Are you sure you want to remove {title}</p>
+      <section className={styles.footer}>
+        <button
+          className={styles.cancel}
+          type="button"
+          onClick={onRequestClose}
+        >
           Cancel
         </button>
         <button
@@ -41,7 +46,7 @@ const ModalRemoveTool = ({ isOpen, onRequestClose, id }: Props) => {
         >
           Yes, remove
         </button>
-      </div>
+      </section>
     </Modal>
   );
 };

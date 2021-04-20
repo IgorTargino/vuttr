@@ -47,6 +47,7 @@ const ToolWidget = ({ title, link, description, tags, id }: Props) => {
       <RemoveToolModal
         isOpen={modalState}
         onRequestClose={closeModal}
+        title={title}
         id={id}
       />
     </>

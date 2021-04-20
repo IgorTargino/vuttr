@@ -1,54 +1,54 @@
-/* eslint-disable no-unused-vars */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import Modal from 'react-modal';
 
 import { AiOutlinePlus } from 'react-icons/ai';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm } from 'react-hook-form';
-import { Input, TextArea } from '../index';
-import usePostTools from '../../Hooks/usePostTools';
-
+import { InputForm, TextArea } from '../index';
+import { useTools } from '../../context/toolsContext';
 import styles from './styles.module.scss';
 
 import FormValidations from './validations';
 
-const initialValues = {
+const initialValue = {
   title: '',
   link: '',
   description: '',
   tags: [''],
+  id: 0,
 };
 
-type FormData = {
+type FormInputs = {
   title: string;
   link: string;
   description: string;
   tags: string;
 };
 interface ToolData {
-  title?: string;
-  link?: string;
-  description?: string;
-  tags?: Array<string>;
+  title: string;
+  link: string;
+  description: string;
+  tags: Array<string>;
+  id: number;
 }
 interface Props {
   isOpen: boolean;
   onRequestClose: () => void;
 }
 
-function AddToolForm({ isOpen, onRequestClose }: Props) {
+const AddToolForm = ({ isOpen, onRequestClose }: Props) => {
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<FormData>({
+  } = useForm<FormInputs>({
     resolver: yupResolver(FormValidations),
   });
 
-  const { addTool } = usePostTools();
+  const { addTool } = useTools();
 
-  const onSubmit = async (data: FormData) => {
-    const newData: ToolData = {};
+  const onSubmit = async (data: FormInputs) => {
+    const newData: ToolData = initialValue;
     newData.title = data.title;
     newData.link = data.link;
     newData.description = data.description;
@@ -70,14 +70,14 @@ function AddToolForm({ isOpen, onRequestClose }: Props) {
         <h3>Add Tool</h3>
       </header>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <Input
+        <InputForm
           name="title"
           label="title"
           placeholder="Notion"
           register={register}
           error={errors.title}
         />
-        <Input
+        <InputForm
           name="link"
           label="link"
           placeholder="https://www.notion.so/"
@@ -91,7 +91,7 @@ function AddToolForm({ isOpen, onRequestClose }: Props) {
           register={register}
           error={errors.description}
         />
-        <Input
+        <InputForm
           name="tags"
           label="tags"
           placeholder="organization, work, study"
@@ -102,6 +102,6 @@ function AddToolForm({ isOpen, onRequestClose }: Props) {
       </form>
     </Modal>
   );
-}
+};
 
 export default AddToolForm;
