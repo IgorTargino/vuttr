@@ -7,15 +7,10 @@
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
-    "@types/jest": "^26.0.15",
-    "@types/node": "^12.0.0",
-    "@types/react": "^17.0.0",
-    "@types/react-dom": "^17.0.0",
-    "@types/react-icons": "^3.0.0",
-    "@types/react-modal": "^3.12.0",
     "@types/yup": "^0.29.11",
     "axios": "^0.21.1",
     "formik": "^2.2.6",
+    "json-server": "^0.16.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-hook-form": "^7.1.0",
@@ -31,7 +26,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}'"
+    "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}'",
+    "server": "json-server db.json -w -d 750 -p 3333"
   },
   "browserslist": {
     "production": [
@@ -46,6 +42,12 @@
     ]
   },
   "devDependencies": {
+    "@types/jest": "^26.0.15",
+    "@types/node": "^12.0.0",
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "@types/react-icons": "^3.0.0",
+    "@types/react-modal": "^3.12.0",
     "@types/axios": "^0.14.0",
     "@types/sass": "^1.16.0",
     "@typescript-eslint/eslint-plugin": "^4.21.0",

@@ -1,31 +1,111 @@
-
-
-*, *:before, *:after {  
+*,
+*:before,
+*:after {
   border: 0;
   margin: 0;
   padding: 0;
   outline: 0;
   -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
-  font-family: 'Source Sans Pro', sans-serif;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
+:root {
+  --black: #000;
+  --white: #fff;
+  --orange: #F95E5A;
 
-html {   
+  --background: #EBEAED;
+  --blue: #365df0;
+  --bgInput: #f5f4f6;
+  --bgInputFocus: #ebeaed;
+  --bgInputInvalid: #feefee;
+  --overlay: #170c3ae6;
+  --text: #170c3a;
+  --textSecondary: #170C3A;
+}
+
+:root.dark {
+  --black: #000;
+  --white: #fff;
+
+  --background:#170C3A;
+  --blue: #365df0;
+  --bgInput: #C7C4CD;
+  --bgInputFocus: #B1ADB9;
+  --bgInputInvalid: #feefee;
+  --overlay: #353372;
+  --text: #FCFCFD;
+  --textSecondary: #FCFCFD;
+}
+
+html {
+  @media (max-width: 1366px) {
+    font-size: 90%;
+  }
+
   @media (max-width: 1080px) {
-    font-size: 93.75%; //15px
+    font-size: 87.5%; // 14px
   }
+}
 
-  @media (max-width: 720px) {
-    font-size: 87.5%; //14px
-  }
+body {
+  background: var(--background);
+}
 
-  background-color: var(--background);
+body, input, textarea, button, label {
+  font-size: 1.25rem;
+  font-family: Source Sans Pro, sans-serif;
+  letter-spacing: 0.4px;
+
+  border-radius: 5px;
+}
+
+h1, h2 ,h3, h4, h5, h6 {
+  font-weight: 600;
+  font-family: Source Sans Pro, sans-serif;
+  color: var(--text);
+}
+
+h1 {
+  font-size: 2.625rem;
+  letter-spacing: 0.84px;
+}
+
+h2 {
+  font-size: 2.25rem;
+  letter-spacing: 0.72px;
+}
+
+h3 {
+  font-size: 1.875rem;
+  letter-spacing: 0.6px;
+}
+
+h4 {
+  font-size: 1.625rem;
+  letter-spacing: 0.52px;
+}
+
+h5 {
+  font-size: 1.5rem;
+  letter-spacing: 0.48px;
+}
+
+input, button {
+  height: 50px;
+}
+
+label {
+  font-weight: 600;
+  text-align: left;
+
+  text-transform: capitalize;
 }
 
 button {
   cursor: pointer;
+  border-radius: 5px;
 }
 
 a {
@@ -33,32 +113,4 @@ a {
   text-decoration: none;
 }
 
-:root {
-  --background: #170C3A;
-  --blue: #365DF0;
-  --white: #fff;
-  --bgInput: #F5F4F6;
-  --bgInputFocus: #EBEAED;
-  --bgInputInvalid: #FEEFEE;
-  --overlay: #170C3AE6;
-}
-
-#root {
-  max-width: 1020px;
-  height: 100%;
-
-  display: flex;
-  flex-direction: column;
-
-  justify-content: center;
-  align-items: center;
-
-  gap: 2rem;
-  padding: 2rem 0;
-
-  margin: 0 auto;
-
-  font-family: 'Source Sans Pro', sans-serif;
-  font-size: 1.25rem;
-}
 

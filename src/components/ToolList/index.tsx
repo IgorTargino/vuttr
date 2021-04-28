@@ -1,6 +1,9 @@
 import { useEffect } from 'react';
-import { useTools } from '../../context/toolsContext';
+import { useTools } from '../../context/ToolsContext';
+import addHashTag from '../../utils/addHashTag';
 import { ToolWidget } from '../index';
+
+import styles from './styles.module.scss';
 
 interface ToolData {
   title: string;
@@ -13,16 +16,6 @@ interface Props {
   inputValue: string;
   checkbox: boolean;
 }
-
-const addHashTag = (element: string) => {
-  const NewElement = element.split('');
-  for (let i = NewElement.length; i >= 0; i -= 1) {
-    NewElement[i] = NewElement[i - 1];
-  }
-  NewElement[0] = '#';
-
-  return NewElement.join('');
-};
 
 const ToolList = (props: Props) => {
   const { toolData, getToolsData, newUpdate } = useTools();
@@ -38,7 +31,7 @@ const ToolList = (props: Props) => {
   }, [inputValue, checkbox, newUpdate]);
 
   return (
-    <>
+    <section className={styles.toolList}>
       {toolData.map((tool: ToolData) => (
         <ToolWidget
           title={tool.title}
@@ -48,7 +41,7 @@ const ToolList = (props: Props) => {
           id={tool.id}
         />
       ))}
-    </>
+    </section>
   );
 };
 

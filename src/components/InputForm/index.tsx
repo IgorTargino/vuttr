@@ -16,22 +16,35 @@ interface Props extends InputHTMLAttributes<HTMLInputElement> {
   placeholder: string;
   register: UseFormRegister<FormData>;
   error: FieldError | undefined;
+  type: string;
 }
 
-function InputForm({ name, label, placeholder, register, error }: Props) {
+function InputForm({ name, label, placeholder, register, error, type }: Props) {
   return (
     <section className={styles.container}>
-      <div>
+      <header>
         <label htmlFor={name}>{label}</label>
-        <span>*</span>
-      </div>
-
-      <input
-        className={styles.input}
-        placeholder={error !== undefined ? 'Error' : placeholder}
-        {...register(label)}
-      />
-      <p>{error?.message}</p>
+        <span className={error && styles.asterisk}>*</span>
+      </header>
+      {type === 'input' ? (
+        <div>
+          <input
+            className={error ? styles.inputInvalid : styles.input}
+            placeholder={error !== undefined ? 'Error' : placeholder}
+            {...register(label)}
+          />
+          <p>{error?.message}</p>
+        </div>
+      ) : (
+        <div>
+          <textarea
+            className={error ? styles.textAreaInvalid : styles.textArea}
+            placeholder={error !== undefined ? 'Error' : placeholder}
+            {...register(label)}
+          />
+          <p>{error?.message}</p>
+        </div>
+      )}
     </section>
   );
 }

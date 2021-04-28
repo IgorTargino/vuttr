@@ -4,30 +4,29 @@
 
   justify-content: center;
   align-items: flex-start;
+  border-radius: 5px;
 
   background-color: var(--bgInput);
-  border-radius: 5px;
 
   width: 70%;
   height: 100%;
 
   padding: 1rem;
   gap: 1rem;
-
 }
 
 .header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+
+
+  h3 {
+    color: #170C3A;
+  }
+  
   
   width: 100%;
-
-  h5 {
-    font-size: 1.5rem;
-    font-weight: 600;
-    letter-spacing: 0.48px;
-  }
 
   button {
     display: flex;
@@ -36,10 +35,10 @@
     align-items: center;
 
     width: 15%;
+    height: 100%;
     gap: 0.5rem;
 
-    font-family: 'Source Sans Pro', sans-serif;
-    font-size: 1rem;
+    font-size: 0;
 
     background-color: var(--bgInput);
 
@@ -57,8 +56,4 @@
   height: 100%;
 
   gap: 1rem;
-
-  p {
-    font-size: 1.125rem;
-  }
 }

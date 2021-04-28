@@ -26,7 +26,7 @@ const ToolWidget = ({ title, link, description, tags, id }: Props) => {
       <section className={styles.container}>
         <div className={styles.header}>
           <a href={link} target="_blank" rel="noreferrer">
-            <h5>{title}</h5>
+            <h3>{title}</h3>
           </a>
 
           <button

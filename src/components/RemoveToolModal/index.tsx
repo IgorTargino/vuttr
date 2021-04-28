@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import Modal from 'react-modal';
-import { useTools } from '../../context/toolsContext';
+import { useTools } from '../../context/ToolsContext';
 
 import styles from './styles.module.scss';
 
@@ -26,12 +26,12 @@ const ModalRemoveTool = ({ isOpen, onRequestClose, id, title }: Props) => {
       className={styles.container}
       overlayClassName={styles.overlay}
     >
-      <section className={styles.title}>
+      <div className={styles.title}>
         <img src="icon-close.svg" alt="close" />
-        <h2>Remove Tool</h2>
-      </section>
+        <h4>Remove Tool</h4>
+      </div>
       <p>Are you sure you want to remove {title}</p>
-      <section className={styles.footer}>
+      <div className={styles.footer}>
         <button
           className={styles.cancel}
           type="button"
@@ -46,7 +46,7 @@ const ModalRemoveTool = ({ isOpen, onRequestClose, id, title }: Props) => {
         >
           Yes, remove
         </button>
-      </section>
+      </div>
     </Modal>
   );
 };

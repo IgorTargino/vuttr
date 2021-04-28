@@ -4,11 +4,12 @@ import Modal from 'react-modal';
 import { AiOutlinePlus } from 'react-icons/ai';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm } from 'react-hook-form';
-import { InputForm, TextArea } from '../index';
-import { useTools } from '../../context/toolsContext';
-import styles from './styles.module.scss';
-
 import FormValidations from './validations';
+
+import { InputForm } from '../index';
+import { useTools } from '../../context/ToolsContext';
+
+import styles from './styles.module.scss';
 
 const initialValue = {
   title: '',
@@ -24,6 +25,7 @@ type FormInputs = {
   description: string;
   tags: string;
 };
+
 interface ToolData {
   title: string;
   link: string;
@@ -36,7 +38,7 @@ interface Props {
   onRequestClose: () => void;
 }
 
-const AddToolForm = ({ isOpen, onRequestClose }: Props) => {
+const AddToolModal = ({ isOpen, onRequestClose }: Props) => {
   const {
     register,
     handleSubmit,
@@ -67,7 +69,7 @@ const AddToolForm = ({ isOpen, onRequestClose }: Props) => {
     >
       <header>
         <AiOutlinePlus size={20} />
-        <h3>Add Tool</h3>
+        <h4>Add Tool</h4>
       </header>
       <form onSubmit={handleSubmit(onSubmit)}>
         <InputForm
@@ -76,6 +78,7 @@ const AddToolForm = ({ isOpen, onRequestClose }: Props) => {
           placeholder="Notion"
           register={register}
           error={errors.title}
+          type="input"
         />
         <InputForm
           name="link"
@@ -83,13 +86,15 @@ const AddToolForm = ({ isOpen, onRequestClose }: Props) => {
           placeholder="https://www.notion.so/"
           register={register}
           error={errors.link}
+          type="input"
         />
-        <TextArea
+        <InputForm
           name="description"
           label="description"
           placeholder="Loren ipsun"
           register={register}
           error={errors.description}
+          type="textArea"
         />
         <InputForm
           name="tags"
@@ -97,6 +102,7 @@ const AddToolForm = ({ isOpen, onRequestClose }: Props) => {
           placeholder="organization, work, study"
           register={register}
           error={errors.tags}
+          type="input"
         />
         <button type="submit">Add Tool</button>
       </form>
@@ -104,4 +110,4 @@ const AddToolForm = ({ isOpen, onRequestClose }: Props) => {
   );
 };
 
-export default AddToolForm;
+export default AddToolModal;
