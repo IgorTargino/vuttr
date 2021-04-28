@@ -44,7 +44,7 @@ export const ToolsProvider = ({ children }: ToolsProviderProps) => {
     try {
       setError(null);
 
-      const { data } = await api.get(`tools${url}`);
+      const { data } = await api.get(`/tools${url}`);
       setToolData(data);
     } catch (errors) {
       setError(errors.message);
@@ -55,7 +55,7 @@ export const ToolsProvider = ({ children }: ToolsProviderProps) => {
     try {
       setError(null);
       await api.post(
-        'tools',
+        '/tools',
         {
           ...tool,
         },

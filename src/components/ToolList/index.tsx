@@ -22,7 +22,7 @@ const ToolList = (props: Props) => {
   const { inputValue, checkbox } = props;
 
   useEffect(() => {
-    if (inputValue === '') getToolsData('/');
+    if (inputValue === '') getToolsData('');
     else if (checkbox === false) {
       getToolsData(`?q=${inputValue}`);
     } else if (checkbox === true) {
