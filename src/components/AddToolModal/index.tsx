@@ -42,10 +42,16 @@ const AddToolModal = ({ isOpen, onRequestClose }: Props) => {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm<FormInputs>({
     resolver: yupResolver(FormValidations),
   });
+
+  const closeModal = () => {
+    reset();
+    onRequestClose();
+  };
 
   const { addTool } = useTools();
 
@@ -57,13 +63,13 @@ const AddToolModal = ({ isOpen, onRequestClose }: Props) => {
     newData.tags = data.tags.split(',');
 
     await addTool(newData);
-    onRequestClose();
+    closeModal();
   };
 
   return (
     <Modal
       isOpen={isOpen}
-      onRequestClose={onRequestClose}
+      onRequestClose={closeModal}
       className={styles.content}
       overlayClassName={styles.overlay}
     >

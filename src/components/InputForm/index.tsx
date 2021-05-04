@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import { InputHTMLAttributes } from 'react';
+import { InputHTMLAttributes, useEffect } from 'react';
 import { FieldError, Path, UseFormRegister } from 'react-hook-form';
 
 import styles from './styles.module.scss';

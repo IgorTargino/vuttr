@@ -4,6 +4,7 @@ import {
   ReactNode,
   useCallback,
   useContext,
+  useEffect,
   useState,
 } from 'react';
 
@@ -43,7 +44,6 @@ export const ToolsProvider = ({ children }: ToolsProviderProps) => {
   const getToolsData = useCallback(async (url: string) => {
     try {
       setError(null);
-
       const { data } = await api.get(`/tools${url}`);
       setToolData(data);
     } catch (errors) {
@@ -74,7 +74,7 @@ export const ToolsProvider = ({ children }: ToolsProviderProps) => {
     try {
       setError(null);
 
-      await api.delete(`tools/${id}`);
+      await api.delete(`/tools/${id}`);
     } catch (errors) {
       setError(errors.message);
     } finally {

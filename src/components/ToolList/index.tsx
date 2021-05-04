@@ -22,7 +22,7 @@ const ToolList = (props: Props) => {
   const { inputValue, checkbox } = props;
 
   useEffect(() => {
-    if (inputValue === '') getToolsData('');
+    if (inputValue === '') getToolsData('/');
     else if (checkbox === false) {
       getToolsData(`?q=${inputValue}`);
     } else if (checkbox === true) {
@@ -32,15 +32,19 @@ const ToolList = (props: Props) => {
 
   return (
     <section className={styles.toolList}>
-      {toolData.map((tool: ToolData) => (
-        <ToolWidget
-          title={tool.title}
-          link={tool.link}
-          description={tool.description}
-          tags={tool.tags.map(addHashTag).join(' ')}
-          id={tool.id}
-        />
-      ))}
+      <ul>
+        {toolData.map((tool: ToolData) => (
+          <li key={tool.id}>
+            <ToolWidget
+              title={tool.title}
+              link={tool.link}
+              description={tool.description}
+              tags={tool.tags.map(addHashTag).join(' ')}
+              id={tool.id}
+            />
+          </li>
+        ))}
+      </ul>
     </section>
   );
 };

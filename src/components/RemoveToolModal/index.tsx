@@ -15,7 +15,7 @@ const ModalRemoveTool = ({ isOpen, onRequestClose, id, title }: Props) => {
   const { removeTool } = useTools();
 
   const remove = async (index: number) => {
-    removeTool(index);
+    await removeTool(index);
     onRequestClose();
   };
 
