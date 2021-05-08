@@ -16,13 +16,14 @@
 
     label {
       text-align: left;
+      color: var(--titles);
     }
   }
 
   p {
     font-size: 1rem;
     text-align: right;
-    color: #f95e5a;
+    color: var(--orange);
   }
 
 }
@@ -33,26 +34,21 @@
   padding-left: 1rem;
   margin-bottom: 0.5rem;
 
-  background-color: var(--bgInput);
-  border: 1px solid #ebeaed;
+  background-color: var(--inputLabelRequired);
+  border: 1px solid var(--borderInputLabel);
 
   &::placeholder {
-    color: #b1adb9;
+    color: var(--textInputRequired);
   }
 
   &:focus {
-    border: 1px solid #dedce1;
-    background-color: var(--bgInputFocus);
-    color: #170c3a;
+    border: 1px solid var(--borderInputLabel);
+    background-color: var(--inputLabelRequiredFocused);
+    color: var(--textInputEntered);
 
     &::placeholder {
-      color: #8f8a9b;
+      color: var(--textInputFocused);
     }
-  }
-
-  &:valid {
-    border: 1px solid #ebeaed;
-    background-color: var(--bgInput);
   }
 }
 
@@ -65,28 +61,23 @@
   padding: 1rem;
   margin-bottom: 0.5rem;
 
-  background-color: var(--bgInput);
-  border: 1px solid #ebeaed;
+  background-color: var(--inputLabelRequired);
+  border: 1px solid var(--borderInputLabel);
 
-  color: #000;
+  color: var(--textInputEntered);
 
   &::placeholder {
-    color: #b1adb9;
+    color: var(--textInputRequired);
   }
 
   &:focus {
     border: 1px solid #dedce1;
-    background-color: var(--bgInputFocus);
-    color: #170c3a;
+    background-color: var(--inputLabelRequiredFocused);
+    color: var(--black);
 
     &::placeholder {
-      color: #8f8a9b;
+      color: var(--textInputFocused);
     }
-  }
-
-  &:valid {
-    border: 1px solid #ebeaed;
-    background-color: var(--bgInput);
   }
 }
 
@@ -102,7 +93,7 @@
 
   color: var(--orange);
 
-  background-color: var(--bgInputInvalid);
+  background-color: var(--inputLabelRequiredInvalid);
   border: 1px solid var(--orange);
 
   &::placeholder {
@@ -119,7 +110,7 @@
   padding: 1rem;
   margin-bottom: 0.5rem;
 
-  background-color: var(--bgInputInvalid);
+  background-color: var(--inputLabelRequiredInvalid);
   border: 1px solid var(--orange);
 
   color: var(--orange);

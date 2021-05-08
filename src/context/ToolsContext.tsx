@@ -55,7 +55,7 @@ export const ToolsProvider = ({ children }: ToolsProviderProps) => {
     try {
       setError(null);
       await api.post(
-        '/tools',
+        '/tools/',
         {
           ...tool,
         },
@@ -73,7 +73,6 @@ export const ToolsProvider = ({ children }: ToolsProviderProps) => {
   const removeTool = async (id: number) => {
     try {
       setError(null);
-
       await api.delete(`/tools/${id}`);
     } catch (errors) {
       setError(errors.message);

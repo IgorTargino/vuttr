@@ -6,7 +6,7 @@
   align-items: flex-start;
   border-radius: 5px;
 
-  background-color: var(--bgInput);
+  background-color: var(--backgroundWidget);
 
   width: 100%;
   height: 100%;
@@ -19,12 +19,6 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-
-
-  h3 {
-    color: #170C3A;
-  }
-  
   
   width: 100%;
 
@@ -40,7 +34,7 @@
 
     font-size: 0;
 
-    background-color: var(--bgInput);
+    background-color: var(--backgroundWidget);
 
     img {
       width: 10px;
@@ -56,4 +50,6 @@
   height: 100%;
 
   gap: 1rem;
+
+  color: var(--content);
 }

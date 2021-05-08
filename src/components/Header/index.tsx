@@ -20,16 +20,17 @@ const Header = (props: Props) => {
   const { toggleDarkMode, isDark } = useTheme();
   return (
     <header className={styles.container}>
-      <section className={styles.title}>
+      <div className={styles.title}>
         <h1>VUTTR</h1>
         <h2>Very Useful Tools to Remember</h2>
-      </section>
+      </div>
 
-      <section className={styles.toolbar}>
-        <div>
+      <div className={styles.toolbar}>
+        <div className={styles.search}>
+          <img src="icon-search.svg" alt="Icon Search" />
           <input
             type="search"
-            placeholder="Type what you're looking for..."
+            placeholder="Search"
             value={inputValue}
             onChange={(event) => setInputValue(event.target.value)}
           />
@@ -42,18 +43,20 @@ const Header = (props: Props) => {
             <p>search in tags only</p>
           </section>
         </div>
-        <button type="button" onClick={toggleDarkMode}>
-          {isDark ? <FaMoon /> : <FaSun />}
-        </button>
-        <button
-          onClick={() => openForm()}
-          type="button"
-          className={styles.button}
-        >
-          <AiOutlinePlus size={20} />
-          Add
-        </button>
-      </section>
+        <div className={styles.buttons}>
+          <button
+            className={styles.toggleButton}
+            type="button"
+            onClick={toggleDarkMode}
+          >
+            {isDark ? <FaMoon /> : <FaSun />}
+          </button>
+          <button onClick={() => openForm()} type="button">
+            <AiOutlinePlus size={20} />
+            Add
+          </button>
+        </div>
+      </div>
     </header>
   );
 };

@@ -11,32 +11,45 @@
 }
 
 :root {
-  --black: #000;
   --white: #fff;
-  --orange: #F95E5A;
-
+  --black: #000;
+  --orange: #f95e5a;
   --background: #EBEAED;
-  --blue: #365df0;
-  --bgInput: #f5f4f6;
-  --bgInputFocus: #ebeaed;
-  --bgInputInvalid: #feefee;
-  --overlay: #170c3ae6;
-  --text: #170c3a;
-  --textSecondary: #170C3A;
+  --inputLabelRequired: #F5F4F6;
+  --inputLabelRequiredFocused: #EBEAED;
+  --inputLabelRequiredInvalid: #FEEFEE;
+  --borderInputLabel: #EBEAED;
+  --textInputRequired: #B1ADB9;
+  --textInputEntered: #170C3A;
+  --textInputFocused: #8F8A9B;
+  --backgroundButton: #365DF0;
+  --backgroundButtonHover: #2F55CC;
+  --backgroundButtonClick: #244AA8;
+  --backgroundButtonDisabled: #B9C6FA;
+  --titles: #170C3A;
+  --content: #000000;
+  --backgroundWidget: #F5F4F6;
+  --backgroundModal: #170C3A;
 }
 
 :root.dark {
-  --black: #000;
   --white: #fff;
-
-  --background:#170C3A;
-  --blue: #365df0;
-  --bgInput: #C7C4CD;
-  --bgInputFocus: #B1ADB9;
-  --bgInputInvalid: #feefee;
-  --overlay: #353372;
-  --text: #FCFCFD;
-  --textSecondary: #FCFCFD;
+  --black: #000;
+  --background: #353372;
+  --inputLabelRequired: #211155;
+  --inputLabelRequiredFocused: #271466;
+  --borderInputLabel: #6554C0;
+  --textInputRequired: #B1ADB9;
+  --textInputEntered: #F5F4F6;
+  --textInputFocused: #8F8A9B;
+  --backgroundButton: #365DF0;
+  --backgroundButtonHover: #2F55CC;
+  --backgroundButtonClick: #244AA8;
+  --backgroundButtonDisabled: #B9C6FA;
+  --titles: #EBEAED;
+  --content: #fff;
+  --backgroundWidget: #170C3A;
+  --backgroundModal: #353372;
 }
 
 html {
@@ -57,14 +70,13 @@ body, input, textarea, button, label {
   font-size: 1.25rem;
   font-family: Source Sans Pro, sans-serif;
   letter-spacing: 0.4px;
-
   border-radius: 5px;
 }
 
 h1, h2 ,h3, h4, h5, h6 {
   font-weight: 600;
   font-family: Source Sans Pro, sans-serif;
-  color: var(--text);
+  color: var(--titles);
 }
 
 h1 {
