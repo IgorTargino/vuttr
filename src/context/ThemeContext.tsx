@@ -11,7 +11,7 @@ interface ThemeContextData {
   toggleDarkMode: () => void;
 }
 
-interface ThemeContextProviderProps {
+interface ThemeProviderProps {
   children: ReactNode;
 }
 
@@ -19,7 +19,7 @@ export const ThemeContext = createContext<ThemeContextData>(
   {} as ThemeContextData
 );
 
-const ThemeContextProvider = ({ children }: ThemeContextProviderProps) => {
+export const ThemeProvider = ({ children }: ThemeProviderProps) => {
   const [isDark, setIsDark] = useState(false);
 
   function toggleDarkMode(): void {
@@ -51,8 +51,6 @@ const ThemeContextProvider = ({ children }: ThemeContextProviderProps) => {
   );
 };
 
-const useTheme = (): ThemeContextData => {
+export const useTheme = (): ThemeContextData => {
   return useContext(ThemeContext);
 };
-
-export { ThemeContextProvider, useTheme };

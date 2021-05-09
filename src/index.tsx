@@ -2,7 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import { ToolsProvider } from './context/ToolsContext';
-import { ThemeContextProvider } from './context/ThemeContext';
+import { ThemeProvider } from './context/ThemeContext';
+import { ModalProvider } from './context/ModalContext';
 
 import './styles/global.scss';
 
@@ -10,11 +11,13 @@ import App from './App';
 
 ReactDOM.render(
   <React.StrictMode>
-    <ThemeContextProvider>
+    <ThemeProvider>
       <ToolsProvider>
-        <App />
+        <ModalProvider>
+          <App />
+        </ModalProvider>
       </ToolsProvider>
-    </ThemeContextProvider>
+    </ThemeProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

@@ -14,6 +14,10 @@
 
     padding-bottom: 1rem;
 
+    span {
+      color: var(--white);
+    }
+
     label {
       text-align: left;
       color: var(--titles);
@@ -50,6 +54,10 @@
       color: var(--textInputFocused);
     }
   }
+
+  &:valid {
+    color: var(--textInputEntered);
+  }
 }
 
 .textArea {
@@ -71,9 +79,9 @@
   }
 
   &:focus {
-    border: 1px solid #dedce1;
+    border: 1px solid var(--borderInputLabel);
     background-color: var(--inputLabelRequiredFocused);
-    color: var(--black);
+    color: var(--textInputEntered);
 
     &::placeholder {
       color: var(--textInputFocused);
@@ -82,7 +90,7 @@
 }
 
 .asterisk {
-  color: var(--orange);
+  color: var(--orange) !important;
 }
 
 .inputInvalid {

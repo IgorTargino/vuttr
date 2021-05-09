@@ -1,5 +1,6 @@
-import { useState } from 'react';
-import { RemoveToolModal } from '../index';
+import { AiOutlineClose } from 'react-icons/ai';
+import { useModal } from '../../context/ModalContext';
+
 import styles from './styles.module.scss';
 
 interface Props {
@@ -11,15 +12,7 @@ interface Props {
 }
 
 const ToolWidget = ({ title, link, description, tags, id }: Props) => {
-  const [modalState, setModalState] = useState(false);
-
-  const openModal = () => {
-    setModalState(true);
-  };
-
-  const closeModal = () => {
-    setModalState(false);
-  };
+  const { openModal } = useModal();
 
   return (
     <>
@@ -32,9 +25,9 @@ const ToolWidget = ({ title, link, description, tags, id }: Props) => {
           <button
             type="button"
             className={styles.button}
-            onClick={() => openModal()}
+            onClick={() => openModal(id, title)}
           >
-            <img src="icon-close.svg" alt="close" />
+            <AiOutlineClose size={15} />
           </button>
         </div>
         <div className={styles.data}>
@@ -44,12 +37,6 @@ const ToolWidget = ({ title, link, description, tags, id }: Props) => {
           </p>
         </div>
       </section>
-      <RemoveToolModal
-        isOpen={modalState}
-        onRequestClose={closeModal}
-        title={title}
-        id={id}
-      />
     </>
   );
 };

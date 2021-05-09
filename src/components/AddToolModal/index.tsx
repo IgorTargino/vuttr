@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import Modal from 'react-modal';
 
-import { AiOutlinePlus } from 'react-icons/ai';
+import { AiOutlineClose, AiOutlinePlus } from 'react-icons/ai';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm } from 'react-hook-form';
 import FormValidations from './validations';
@@ -10,6 +10,7 @@ import { InputForm } from '../index';
 import { useTools } from '../../context/ToolsContext';
 
 import styles from './styles.module.scss';
+import { useModal } from '../../context/ModalContext';
 
 const initialValue = {
   title: '',
@@ -33,12 +34,8 @@ interface ToolData {
   tags: Array<string>;
   id: number;
 }
-interface Props {
-  isOpen: boolean;
-  onRequestClose: () => void;
-}
 
-const AddToolModal = ({ isOpen, onRequestClose }: Props) => {
+const AddToolModal = () => {
   const {
     register,
     handleSubmit,
@@ -48,12 +45,13 @@ const AddToolModal = ({ isOpen, onRequestClose }: Props) => {
     resolver: yupResolver(FormValidations),
   });
 
+  const { addTool } = useTools();
+  const { formState, toggleFormState } = useModal();
+
   const closeModal = () => {
     reset();
-    onRequestClose();
+    toggleFormState();
   };
-
-  const { addTool } = useTools();
 
   const onSubmit = async (data: FormInputs) => {
     const newData: ToolData = initialValue;
@@ -68,14 +66,19 @@ const AddToolModal = ({ isOpen, onRequestClose }: Props) => {
 
   return (
     <Modal
-      isOpen={isOpen}
+      isOpen={formState}
       onRequestClose={closeModal}
       className={styles.content}
       overlayClassName={styles.overlay}
     >
       <header>
-        <AiOutlinePlus size={20} />
-        <h4>Add Tool</h4>
+        <div>
+          <AiOutlinePlus size={20} />
+          <h4>Add Tool</h4>
+        </div>
+        <button type="button" className={styles.button} onClick={closeModal}>
+          <AiOutlineClose size={15} />
+        </button>
       </header>
       <form onSubmit={handleSubmit(onSubmit)}>
         <InputForm

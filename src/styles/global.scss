@@ -14,7 +14,8 @@
   --white: #fff;
   --black: #000;
   --orange: #f95e5a;
-  --background: #EBEAED;
+  --background: #DEDCE1;
+  --overlay: #170C3AE6;
   --inputLabelRequired: #F5F4F6;
   --inputLabelRequiredFocused: #EBEAED;
   --inputLabelRequiredInvalid: #FEEFEE;
@@ -29,16 +30,17 @@
   --titles: #170C3A;
   --content: #000000;
   --backgroundWidget: #F5F4F6;
-  --backgroundModal: #170C3A;
+  --backgroundModal: #DEDCE1;
 }
 
 :root.dark {
   --white: #fff;
   --black: #000;
   --background: #353372;
+  --overlay: #170C3A;
   --inputLabelRequired: #211155;
   --inputLabelRequiredFocused: #271466;
-  --borderInputLabel: #6554C0;
+  --borderInputLabel: #353372;
   --textInputRequired: #B1ADB9;
   --textInputEntered: #F5F4F6;
   --textInputFocused: #8F8A9B;

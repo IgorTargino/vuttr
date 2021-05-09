@@ -2,22 +2,26 @@ import React from 'react';
 
 import { AiOutlinePlus } from 'react-icons/ai';
 import { FaMoon, FaSun } from 'react-icons/fa';
+import { BsSearch } from 'react-icons/bs';
 
 import { useTheme } from '../../context/ThemeContext';
 
 import styles from './styles.module.scss';
+import { useModal } from '../../context/ModalContext';
 
 interface Props {
   inputValue: string;
   setInputValue: React.Dispatch<React.SetStateAction<string>>;
   checkbox: boolean;
   setCheckbox: React.Dispatch<React.SetStateAction<boolean>>;
-  openForm: () => void;
 }
 
 const Header = (props: Props) => {
-  const { inputValue, setInputValue, checkbox, setCheckbox, openForm } = props;
+  const { inputValue, setInputValue, checkbox, setCheckbox } = props;
+
   const { toggleDarkMode, isDark } = useTheme();
+  const { toggleFormState } = useModal();
+
   return (
     <header className={styles.container}>
       <div className={styles.title}>
@@ -27,7 +31,9 @@ const Header = (props: Props) => {
 
       <div className={styles.toolbar}>
         <div className={styles.search}>
-          <img src="icon-search.svg" alt="Icon Search" />
+          <div className={styles.iconSearch}>
+            <BsSearch size={15} />
+          </div>
           <input
             type="search"
             placeholder="Search"
@@ -51,7 +57,7 @@ const Header = (props: Props) => {
           >
             {isDark ? <FaMoon /> : <FaSun />}
           </button>
-          <button onClick={() => openForm()} type="button">
+          <button onClick={toggleFormState} type="button">
             <AiOutlinePlus size={20} />
             Add
           </button>

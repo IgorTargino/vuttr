@@ -18,15 +18,20 @@
 
   margin: 0 1rem;
 
-  width: 30rem;
-  padding: 1rem;
+  width: 25rem;
+  padding: 1.875rem;
   border-radius: 5px;
 
-  gap: 1rem;
+  gap: 1.875rem;
 
   box-shadow: 0 0 60px rgba(0, 0, 0, 0.05);
-  box-shadow: 0rem 1.25rem 1.5rem #0000001a;
-  background: var(--white);
+  box-shadow: 0rem 1.25rem 1.5rem #0d0d291a;
+  background: var(--backgroundModal);
+  color: var(--titles);
+
+  p {
+    color: #8F8A9B;
+  }
 }
 
 .title {
@@ -59,7 +64,8 @@
     width: 7.5rem;
     border-radius: 5px;
 
-    font: normal normal 1.125rem 600;
+    font-size: 1.125rem;
+    font-weight: 600;
     letter-spacing: 0.36px;
 
     @media (max-width: 768px) {
@@ -68,30 +74,29 @@
   }
 
   .cancel {
-    background: #feefee;
-    color: #f95e5a;
-
-    &:hover {
-      background-color: #fcd7d6;
-      cursor: pointer;
-    }
-
-    &:active {
-      background-color: #fcc6c5;
-    }
-  }
-
-  .remove {
-    background: #e1e7fd;
-    color: #365df0;
+    background: #E1E7FD;
+    color: #365DF0;
 
     &:hover {
       background-color: #CAD6FC;
-      cursor: pointer;
     }
 
     &:active {
       background-color: #B9C6FA;
+    }
+  }
+
+  .remove {
+    background: var(--backgroundButton);
+    color: var(--white);
+
+    &:hover {
+      background-color: var(--backgroundButtonHover);
+      cursor: pointer;
+    }
+
+    &:active {
+      background-color: var(--backgroundButtonClick);
     }
   }
 }
