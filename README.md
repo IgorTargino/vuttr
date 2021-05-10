@@ -1,46 +1,105 @@
-# Getting Started with Create React App
+<p align="center">
+  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/IgorTargino/podcastr?color=%2304D361&style=flat">
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/IgorTargino/podcastr?style=flat">
+  
+  <a href="https://github.com/IgorTargino/podcastr/commits/master">
+    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/IgorTargino/podcastr?style=flat">
+  </a>
+    
+   <img alt="License" src="https://img.shields.io/badge/license-MIT-brightgreen?style=flat">
+  
+</p>
+## 🧐 Sobre o projeto
 
-## Available Scripts
+Uma aplicação para gerenciar ferramentas com seus respectivos nomes, links, descrições e tags. <br>
+<a align="center" target="blank" href="https://podcastr-sage.vercel.app/">
+    <img alt="Site podcastr" src="https://img.shields.io/static/v1?label=site&message=podcastr&color=4953B8&style=flat&logo=vercel">
+</a>
 
-In the project directory, you can run:
+## 🎨 Layout
 
-### `yarn start`
+### Telas Mobile
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<div align="center">
+  <img width="100%" src="./github/mobile.png"/>
+</div>
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Telas Desktop-light
 
-### `yarn test`
+<div align="center">
+  <img width="100%" src="./github/desktop-light.png"/>
+</div>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Telas Desktop-dark
 
-### `yarn build`
+<div align="center">
+  <img width="100%" src="./github/desktop-dark.png"/>
+</div>
+---
+## ⚙️ Funcionalidades
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- [x] Lista das ferramentas cadastradas;
+- [x] Botão add - abre modal para inserção de novas ferramentas;
+  - [x] Formulário para inserção novas ferramentas;
+  - [x] Validação dos dados;
+- [x] Botão x(remove) - abre modal de remoção de ferramentas;
+- [x] Busca por ferramentas dinamicamente (global ou utilizando apenas tags);
+---
+## Como executar o projeto
+### Pré-requisitos
+- git 
+- Node.js
+- NPM ou Yarn
+### Variáveis de Ambiente
+Além das ferramentas anteriores é necessária criar uma váriavel de ambiente .env.local na raiz do projeto e adicionar as seguintes variáveis
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+ API_URL=https://my-json-server.typicode.com/IgorTargino/podcastr
+### Instalação
+```
+# Abra o terminal e copie este repositório com o comando
+$ git clone https://github.com/IgorTargino/vuttr.git
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Acesse a pasta do projeto no prompt de comando 
+$ cd vuttr
 
-### `yarn eject`
+# Instale as dependências
+yarn install
+ou
+$ npm install
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+# Execute o servidor
+$ yarn server
+ou
+$ npm run server
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# Execute a aplicação
+$ yarn start
+ou
+$ npm run start
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+# Acesse http://localhost:3000 no seu navagador.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```
+## 🚀 Tecnologias 
+Tecnologias utilizadas para desenvolver o projeto:
+- react.js
+- typescript
+- context
+- axios
+- sass
+- prettier
+- eslint
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 🦸‍♂️ **Autor**
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<p>
+ <sub><strong>🌟 Igor Targino Marinho🌟</strong></sub>
+</p>
+
+[![Linkedin Badge](https://img.shields.io/badge/-IgorTargino-blue?style=for-the-badge&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/igor-targino/)](https://www.linkedin.com/in/igor-targino/)
+[![Gmail Badge](https://img.shields.io/badge/-igortargino01@gmail.com-c14438?style=for-the-badge&logo=Gmail&logoColor=white&link=mailto:igortargino01@gmail.com)](mailto:igortargino01@gmail.com)
+
+>Este projeto foi desenvolvido por **[Igor Targino](https://github.com/IgorTargino)**
+Se gostou, dá ⭐, vai me ajudar 😉

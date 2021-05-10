@@ -77,6 +77,7 @@
       margin-right: 1rem;
 
       background-color: var(--inputLabelRequired);
+      color: var(--textInputEntered);
       border: 1px solid var(--borderInputLabel);
 
       @media(max-width: 720px) {
@@ -93,7 +94,7 @@
       &:focus {
         border: 1px solid var(--borderInputLabel);
         background-color: var(--inputLabelRequiredFocused);
-        color: var(--content);
+        color: var(--textInputFocused);
     
         &::placeholder {
           color: #8F8A9B;

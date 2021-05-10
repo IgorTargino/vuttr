@@ -100,7 +100,7 @@ const AddToolModal = () => {
         <InputForm
           name="description"
           label="description"
-          placeholder="Loren ipsun"
+          placeholder="Is an application and service of notes with support of discounts that integrates tasks, wikis and databases."
           register={register}
           error={errors.description}
           type="textArea"

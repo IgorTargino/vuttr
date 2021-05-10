@@ -5,7 +5,7 @@ const FormValidations = yup.object().shape({
   link: yup.string().url('Url invalid').required('Url is required'),
   description: yup
     .string()
-    .max(50, 'Too Long!')
+    .max(200, 'Too Long!')
     .required('Description is required'),
   tags: yup.string().required('Tags is required'),
 });

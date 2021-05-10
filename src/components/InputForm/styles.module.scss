@@ -87,6 +87,10 @@
       color: var(--textInputFocused);
     }
   }
+
+  @media (max-width: 720px) {
+    padding: 0.5rem 1rem;
+  }
 }
 
 .asterisk {

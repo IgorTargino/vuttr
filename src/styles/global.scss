@@ -19,6 +19,7 @@
   --inputLabelRequired: #F5F4F6;
   --inputLabelRequiredFocused: #EBEAED;
   --inputLabelRequiredInvalid: #FEEFEE;
+  --searchInput: #F5F4F6;
   --borderInputLabel: #EBEAED;
   --textInputRequired: #B1ADB9;
   --textInputEntered: #170C3A;
@@ -36,8 +37,8 @@
 :root.dark {
   --white: #fff;
   --black: #000;
-  --background: #353372;
-  --overlay: #170C3A;
+  --background: #170C3A;
+  --overlay: #170C3AE6;
   --inputLabelRequired: #211155;
   --inputLabelRequiredFocused: #271466;
   --borderInputLabel: #353372;
@@ -50,7 +51,7 @@
   --backgroundButtonDisabled: #B9C6FA;
   --titles: #EBEAED;
   --content: #fff;
-  --backgroundWidget: #170C3A;
+  --backgroundWidget: #353372;
   --backgroundModal: #353372;
 }
 
