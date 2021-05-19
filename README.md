@@ -22,19 +22,19 @@ Uma aplicação para gerenciar ferramentas com seus respectivos nomes, links, de
 ### Telas Mobile
 
 <div align="center">
-  <img width="100%" src="./github/mobile.png"/>
+  <img width="100%" src="./.github/mobile.png"/>
 </div>
 
 ### Telas Desktop-light
 
 <div align="center">
-  <img width="100%" src="./github/desktop-light.png"/>
+  <img width="100%" src="./.github/desktop-light.png"/>
 </div>
 
 ### Telas Desktop-dark
 
 <div align="center">
-  <img width="100%" src="./github/desktop-dark.png"/>
+  <img width="100%" src="./.github/desktop-dark.png"/>
 </div>
 ---
 ## ⚙️ Funcionalidades
