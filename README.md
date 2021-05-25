@@ -10,6 +10,7 @@
    <img alt="License" src="https://img.shields.io/badge/license-MIT-brightgreen?style=flat">
   
 </p>
+
 ## 🧐 Sobre o projeto
 
 Uma aplicação para gerenciar ferramentas com seus respectivos nomes, links, descrições e tags. <br>
@@ -36,7 +37,7 @@ Uma aplicação para gerenciar ferramentas com seus respectivos nomes, links, de
 <div align="center">
   <img width="100%" src="./.github/desktop-dark.png"/>
 </div>
----
+
 ## ⚙️ Funcionalidades
 
 - [x] Lista das ferramentas cadastradas;
