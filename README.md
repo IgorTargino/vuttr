@@ -86,6 +86,7 @@ $ npm run start
 Tecnologias utilizadas para desenvolver o projeto:
 - react.js
 - typescript
+- react-hook-form
 - context
 - axios
 - sass
