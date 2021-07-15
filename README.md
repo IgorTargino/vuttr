@@ -55,7 +55,7 @@ Uma aplicação para gerenciar ferramentas com seus respectivos nomes, links, de
 ### Variáveis de Ambiente
 Além das ferramentas anteriores é necessária criar uma váriavel de ambiente .env.local na raiz do projeto e adicionar as seguintes variáveis
 
- API_URL=https://my-json-server.typicode.com/IgorTargino/podcastr
+ API_URL=https://my-json-server.typicode.com/IgorTargino/podcastr ou você pode gerar sua própria fake api pelo my-json-server.
 ### Instalação
 ```
 # Abra o terminal e copie este repositório com o comando
