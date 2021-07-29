@@ -14,8 +14,8 @@
 ## 🧐 Sobre o projeto
 
 Uma aplicação para gerenciar ferramentas com seus respectivos nomes, links, descrições e tags.<br>
-<a align="center" target="blank" href="https://podcastr-sage.vercel.app/">
-    <img alt="Site podcastr" src="https://img.shields.io/static/v1?label=site&message=podcastr&color=4953B8&style=flat&logo=vercel">
+<a align="center" target="blank" href="https://vuttr-beta.vercel.app/">
+    <img alt="Site VUTTR" src="https://img.shields.io/static/v1?label=site&message=podcastr&color=4953B8&style=flat&logo=vercel">
 </a>
 
 ## 🎨 Layout
