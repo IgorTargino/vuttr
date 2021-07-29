@@ -1,10 +1,10 @@
 <p align="center">
-  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/IgorTargino/podcastr?color=%2304D361&style=flat">
+  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/IgorTargino/vuttr?color=%2304D361&style=flat">
 
-  <img alt="Repository size" src="https://img.shields.io/github/repo-size/IgorTargino/podcastr?style=flat">
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/IgorTargino/vuttr?style=flat">
   
-  <a href="https://github.com/IgorTargino/podcastr/commits/master">
-    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/IgorTargino/podcastr?style=flat">
+  <a href="https://github.com/IgorTargino/vuttr/commits/master">
+    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/IgorTargino/vuttr?style=flat">
   </a>
     
    <img alt="License" src="https://img.shields.io/badge/license-MIT-brightgreen?style=flat">
@@ -15,7 +15,7 @@
 
 Uma aplicação para gerenciar ferramentas com seus respectivos nomes, links, descrições e tags.<br>
 <a align="center" target="blank" href="https://vuttr-beta.vercel.app/">
-    <img alt="Site VUTTR" src="https://img.shields.io/static/v1?label=site&message=podcastr&color=4953B8&style=flat&logo=vercel">
+    <img alt="Site VUTTR" src="https://img.shields.io/static/v1?label=site&message=vuttr&color=4953B8&style=flat&logo=vercel">
 </a>
 
 ## 🎨 Layout
@@ -47,7 +47,9 @@ Uma aplicação para gerenciar ferramentas com seus respectivos nomes, links, de
 - [x] Botão x(remove) - abre modal de remoção de ferramentas;
 - [x] Busca por ferramentas dinamicamente (global ou utilizando apenas tags);
 ---
+
 ## Como executar o projeto
+
 ### Pré-requisitos
 - git 
 - Node.js
@@ -55,7 +57,7 @@ Uma aplicação para gerenciar ferramentas com seus respectivos nomes, links, de
 ### Variáveis de Ambiente
 Além das ferramentas anteriores é necessária criar uma váriavel de ambiente .env.local na raiz do projeto e adicionar as seguintes variáveis
 
- API_URL=https://my-json-server.typicode.com/IgorTargino/podcastr ou você pode gerar sua própria fake api pelo my-json-server e adquirir sua API_URl.
+ API_URL=https://my-json-server.typicode.com/IgorTargino/vuttr ou você pode gerar sua própria fake api pelo my-json-server e adquirir sua API_URl.
 ### Instalação
 ```
 # Abra o terminal e copie este repositório com o comando
